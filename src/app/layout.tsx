@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "../../portfolio/node_modules/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/layout/footer";
