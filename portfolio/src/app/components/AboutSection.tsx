@@ -8,8 +8,7 @@ const AboutSection = () => {
     { name: 'TypeScript', level: 85 },
     { name: 'Next.js', level: 88 },
     { name: 'Tailwind CSS', level: 92 },
-    { name: 'Node.js', level: 80 },
-    { name: 'MongoDB', level: 75 }
+    { name: 'Django Rest Framework', level: 80 },
   ];
 
   const containerVariants = {
@@ -127,7 +126,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {[
-            { number: '3+', label: 'Years Experience' },
+            { number: '1+', label: 'Years Experience' },
             { number: '50+', label: 'Projects Completed' },
             { number: '20+', label: 'Happy Clients' },
             { number: '100%', label: 'Satisfaction Rate' }

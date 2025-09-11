@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { WEB_TITLE, navItems } from '@/lib/constant';
 
 const Navigation = () => {
@@ -39,6 +40,9 @@ const Navigation = () => {
     }
   };
 
+  // Check if we're on the home page (landing page)
+  const isHomePage = typeof window !== 'undefined' && window.location.pathname === '/';
+
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -63,27 +67,44 @@ const Navigation = () => {
 
           {/* Navigation Items */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                }`}
-              >
-                {item.label}
-                {activeSection === item.id && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
-                    layoutId="activeSection"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              // For home page, use scroll navigation
+              if (isHomePage) {
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                      activeSection === item.id
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                  >
+                    {item.label}
+                    {activeSection === item.id && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                        layoutId="activeSection"
+                        initial={false}
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </button>
+                );
+              } else {
+                // For other pages, use Link navigation
+                const href = item.id === 'hero' ? '/' : `/${item.id}`;
+                return (
+                  <Link
+                    key={item.id}
+                    href={href}
+                    className="relative px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+            })}
           </div>
 
           {/* Mobile Menu Button */}

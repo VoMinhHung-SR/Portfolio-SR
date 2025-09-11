@@ -3,9 +3,8 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
-import Footer from "@/layout/footer";
 
-export default function Home() {  
+export default function Home() {
   return (
     <>
       <Navigation />
@@ -13,9 +12,6 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
-
-
-
     </>
   );
 }
