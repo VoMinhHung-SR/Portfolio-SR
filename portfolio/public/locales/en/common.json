@@ -1,3 +1,51 @@
 {
-    "Hi": "Hi"
+  "nav": {
+    "home": "Home",
+    "about": "About", 
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm Hung — Frontend Developer",
+    "subtitle": "Building beautiful and functional web experiences",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "I'm a passionate Frontend Developer with 1+ years of experience creating beautiful and functional web applications.",
+    "myJourney": "My Journey",
+    "skills": "Skills & Technologies",
+    "journey1": "Started my journey in web development 1 years ago, I've been passionate about creating user-friendly and visually appealing web applications. My expertise lies in modern JavaScript frameworks, particularly React and Next.js.",
+    "journey2": "I love turning complex problems into simple, beautiful and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.",
+    "journey3": "My goal is to build products that provide pixel-perfect, performant experiences while maintaining clean and scalable code.",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed", 
+      "clients": "Happy Clients",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Here are some of my recent projects that showcase my skills and experience in web development.",
+    "otherTitle": "Other Projects",
+    "liveDemo": "Live Demo",
+    "viewCode": "View Code"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "I'm always interested in new opportunities and collaborations. Let's discuss how we can create something amazing together!",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send a Message",
+    "name": "Your Name",
+    "email": "Email Address",
+    "message": "Message", 
+    "send": "Send Message",
+    "followMe": "Follow Me",
+    "emailDesc": "Send me an email anytime",
+    "phoneDesc": "Call me for urgent matters",
+    "twitterDesc": "Follow me for updates",
+    "linkedinDesc": "Connect with me professionally"
+  }
 }

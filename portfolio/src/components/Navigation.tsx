@@ -1,13 +1,28 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { WEB_TITLE, navItems } from '@/lib/constant';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
+import { WEB_TITLE } from '@/lib/constant';
+import ENFlag from '@/lib/assets/icon/enFlag';
+import VNFlag from '@/lib/assets/icon/vnFlag';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const { t } = useTranslation('common');
+  const router = useRouter();
+  const langMenuRef = useRef<HTMLDivElement>(null);
+
+  const navItems = [
+    { id: 'hero', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'contact', label: t('nav.contact') }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +48,20 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close language menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setIsLangMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -42,6 +71,17 @@ const Navigation = () => {
 
   // Check if we're on the home page (landing page)
   const isHomePage = typeof window !== 'undefined' && window.location.pathname === '/';
+
+  // Language switcher functions
+  const changeLanguage = (locale: string) => {
+    router.push(router.asPath, router.asPath, { locale });
+    setIsLangMenuOpen(false);
+  };
+
+  const languages = [
+    { code: 'en', name: 'English', flag: ENFlag },
+    { code: 'vi', name: 'Tiếng Việt', flag: VNFlag }
+  ];
 
   return (
     <motion.nav
@@ -105,6 +145,55 @@ const Navigation = () => {
                 );
               }
             })}
+          </div>
+
+          {/* Language Switcher */}
+          <div className="relative" ref={langMenuRef}>
+            <button
+              onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+              className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              {router.locale === 'en' ? <ENFlag className="w-5 h-5" /> : <VNFlag className="w-5 h-5" />}
+              <span className="hidden sm:inline">
+                {router.locale === 'en' ? 'EN' : 'VI'}
+              </span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Language Dropdown */}
+            {isLangMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50"
+              >
+                {languages.map((lang) => {
+                  const FlagComponent = lang.flag;
+                  return (
+                    <button
+                      key={lang.code}
+                      onClick={() => changeLanguage(lang.code)}
+                      className={`w-full flex items-center space-x-3 px-4 py-3 text-left text-sm transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg ${
+                        router.locale === lang.code
+                          ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                      }`}
+                    >
+                      <FlagComponent className="w-5 h-5" />
+                      <span>{lang.name}</span>
+                      {router.locale === lang.code && (
+                        <svg className="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </button>
+                  );
+                })}
+              </motion.div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}

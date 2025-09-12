@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 
 const AboutSection = () => {
+  const { t } = useTranslation('common');
   const skills = [
     { name: 'React', level: 90 },
     { name: 'TypeScript', level: 85 },
@@ -41,10 +43,10 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
-            About Me
+            {t('about.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            I&apos;m a passionate Frontend Developer with 3+ years of experience creating beautiful and functional web applications.
+            {t('about.subtitle')}
           </p>
         </motion.div>
 
@@ -57,22 +59,17 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
-              My Journey
+              {t('about.myJourney')}
             </h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                Started my journey in web development 3 years ago, I've been passionate about creating 
-                user-friendly and visually appealing web applications. My expertise lies in modern 
-                JavaScript frameworks, particularly React and Next.js.
+                {t('about.journey1')}
               </p>
               <p>
-                I love turning complex problems into simple, beautiful and intuitive designs. When I'm 
-                not coding, you'll find me exploring new technologies, contributing to open source 
-                projects, or sharing knowledge with the developer community.
+                {t('about.journey2')}
               </p>
               <p>
-                My goal is to build products that provide pixel-perfect, performant experiences while 
-                maintaining clean and scalable code.
+                {t('about.journey3')}
               </p>
             </div>
           </motion.div>
@@ -85,7 +82,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
-              Skills & Technologies
+              {t('about.skills')}
             </h3>
             <div className="space-y-4">
               {skills.map((skill, index) => (
@@ -126,10 +123,10 @@ const AboutSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {[
-            { number: '1+', label: 'Years Experience' },
-            { number: '50+', label: 'Projects Completed' },
-            { number: '20+', label: 'Happy Clients' },
-            { number: '100%', label: 'Satisfaction Rate' }
+            { number: '1+', label: t('about.stats.experience') },
+            { number: '50+', label: t('about.stats.projects') },
+            { number: '20+', label: t('about.stats.clients') },
+            { number: '100%', label: t('about.stats.satisfaction') }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">

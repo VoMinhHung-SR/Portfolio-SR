@@ -1,3 +1,51 @@
 {
-    "Hi": "Xin chào"
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "title": "Xin chào, tôi là Hùng — Frontend Developer",
+    "subtitle": "Xây dựng những trải nghiệm web đẹp và hữu ích",
+    "viewProjects": "Xem dự án",
+    "contactMe": "Liên hệ"
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "subtitle": "Tôi là một Frontend Developer đam mê với hơn 1 năm kinh nghiệm tạo ra những ứng dụng web đẹp và hữu ích.",
+    "myJourney": "Hành trình của tôi",
+    "skills": "Kỹ năng & Công nghệ",
+    "journey1": "Bắt đầu hành trình phát triển web từ 1 năm trước, tôi luôn đam mê tạo ra những ứng dụng web thân thiện với người dùng và hấp dẫn về mặt thị giác. Chuyên môn của tôi nằm ở các framework JavaScript hiện đại, đặc biệt là React và Next.js.",
+    "journey2": "Tôi thích biến những vấn đề phức tạp thành những thiết kế đơn giản, đẹp và trực quan. Khi không code, bạn sẽ thấy tôi khám phá các công nghệ mới, đóng góp cho các dự án mã nguồn mở, hoặc chia sẻ kiến thức với cộng đồng developer.",
+    "journey3": "Mục tiêu của tôi là xây dựng những sản phẩm cung cấp trải nghiệm hoàn hảo từng pixel, hiệu suất cao trong khi vẫn duy trì code sạch và có thể mở rộng.",
+    "stats": {
+      "experience": "Năm kinh nghiệm",
+      "projects": "Dự án hoàn thành",
+      "clients": "Khách hàng hài lòng", 
+      "satisfaction": "Tỷ lệ hài lòng"
+    }
+  },
+  "projects": {
+    "title": "Dự án nổi bật",
+    "subtitle": "Đây là một số dự án gần đây của tôi thể hiện kỹ năng và kinh nghiệm trong phát triển web.",
+    "otherTitle": "Dự án khác",
+    "liveDemo": "Demo trực tiếp",
+    "viewCode": "Xem mã nguồn"
+  },
+  "contact": {
+    "title": "Hãy cùng làm việc",
+    "subtitle": "Tôi luôn quan tâm đến những cơ hội và sự hợp tác mới. Hãy thảo luận về cách chúng ta có thể tạo ra điều gì đó tuyệt vời cùng nhau!",
+    "getInTouch": "Liên lạc",
+    "sendMessage": "Gửi tin nhắn",
+    "name": "Tên của bạn",
+    "email": "Địa chỉ email",
+    "message": "Tin nhắn",
+    "send": "Gửi tin nhắn",
+    "followMe": "Theo dõi tôi",
+    "emailDesc": "Gửi email cho tôi bất cứ lúc nào",
+    "phoneDesc": "Gọi cho tôi khi có việc gấp",
+    "twitterDesc": "Theo dõi tôi để cập nhật",
+    "linkedinDesc": "Kết nối với tôi một cách chuyên nghiệp"
+  }
 }
