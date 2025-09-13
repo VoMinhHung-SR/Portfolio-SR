@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "../styles/theme/index.css";
+
+@import "./styles/theme/index.css";
 
 /* Next.js theme inline compatibility */
 @theme inline {

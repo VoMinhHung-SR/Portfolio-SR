@@ -1,18 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';    
+import { useTranslation } from 'next-i18next';
 
 const HeroSection = () => {
+  const { t } = useTranslation('common');
   const [text, setText] = useState('');
-  const fullText = "Hi, I'm Hung — Frontend Developer";
+  const [fullText, setFullText] = useState('');
   const [showButtons, setShowButtons] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
+  // First useEffect to mark client-side rendering
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Second useEffect for animation (only runs on client)
+  useEffect(() => {
+    if (!isClient) return;
+    
+    const titleText = t('hero.title');
+    setFullText(titleText);
+    
     let index = 0;
+    setText('');
     const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setText(fullText.slice(0, index + 1));
+      if (index < titleText.length) {
+        setText(titleText.slice(0, index + 1));
         index++;
       } else {
         clearInterval(timer);
@@ -21,7 +36,7 @@ const HeroSection = () => {
     }, 100);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [t, isClient]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,28 +81,30 @@ const HeroSection = () => {
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background */}
 
-      {/* Floating particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, -100, -20],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles - only render on client */}
+      {isClient && (
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [-20, -100, -20],
+                opacity: [0.2, 0.8, 0.2],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <motion.div
         className="text-center z-10 max-w-4xl mx-auto px-4"
@@ -119,25 +136,27 @@ const HeroSection = () => {
           variants={itemVariants}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-            {text}
-            <motion.span
-              className="inline-block w-1 h-8 md:h-12 bg-blue-500 ml-1"
-              animate={{ opacity: [1, 0] }}
-              transition={{ duration: 0.8, repeat: Infinity }}
-            />
+            {isClient ? text : t('hero.title')}
+            {isClient && (
+              <motion.span
+                className="inline-block w-1 h-8 md:h-12 bg-blue-500 ml-1"
+                animate={{ opacity: [1, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity }}
+              />
+            )}
           </h1>
           <motion.p
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300"
             initial={{ opacity: 0 }}
-            animate={{ opacity: showButtons ? 1 : 0 }}
+            animate={{ opacity: isClient && showButtons ? 1 : (isClient ? 0 : 1) }}
             transition={{ delay: 0.5 }}
           >
-            Building beautiful and functional web experiences
+            {t('hero.subtitle')}
           </motion.p>
         </motion.div>
 
         {/* CTA Buttons */}
-        {showButtons && (
+        {(isClient ? showButtons : true) && (
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0 }}
@@ -156,7 +175,7 @@ const HeroSection = () => {
               }}
               className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              View Projects
+              {t('hero.viewProjects')}
             </motion.button>
 
             <motion.button
@@ -172,7 +191,7 @@ const HeroSection = () => {
               }}
               className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300"
             >
-              Contact Me
+              {t('hero.contactMe')}
             </motion.button>
           </motion.div>
         )}
@@ -181,7 +200,7 @@ const HeroSection = () => {
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: showButtons ? 1 : 0, y: 0 }}
+          animate={{ opacity: isClient && showButtons ? 1 : (isClient ? 0 : 1), y: 0 }}
           transition={{ delay: 1.5 }}
         >
           <motion.div

@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { WEB_TITLE } from '@/lib/constant';
-import ENFlag from '@/lib/assets/icon/enFlag';
-import VNFlag from '@/lib/assets/icon/vnFlag';
+import ENFlag from './icon/enFlag.jsx';
+import VNFlag from './icon/vnFlag.jsx';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,8 +69,13 @@ const Navigation = () => {
     }
   };
 
-  // Check if we're on the home page (landing page)
-  const isHomePage = typeof window !== 'undefined' && window.location.pathname === '/';
+  // Check if we're on the home page (landing page) 
+  const [isHomePage, setIsHomePage] = useState(true);
+
+  // Set homepage status after mount to avoid hydration mismatch
+  useEffect(() => {
+    setIsHomePage(router.pathname === '/');
+  }, [router.pathname]);
 
   // Language switcher functions
   const changeLanguage = (locale: string) => {

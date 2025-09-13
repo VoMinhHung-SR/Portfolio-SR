@@ -1,24 +1,24 @@
-'use client';
-
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 
 const ProjectsSection = () => {
+  const { t } = useTranslation('common');
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution built with Next.js and Stripe integration. Features include user authentication, product catalog, shopping cart, and secure payment processing.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Prisma"],
-      image: "/placeholder-project.jpg",
+      title: t('projects.project1.title'),
+      description: t('projects.project1.description'),
+      tech: t('projects.project1.tech', { returnObjects: true }),
+      image: t('projects.project1.image'),
       demoUrl: "#",
       codeUrl: "#",
       featured: true
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+      title: t('projects.project2.title'),
+      description: t('projects.project2.description'),
+      tech: t('projects.project2.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
       demoUrl: "#",
       codeUrl: "#",
@@ -26,9 +26,9 @@ const ProjectsSection = () => {
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-      tech: ["Vue.js", "API Integration", "Chart.js", "CSS3", "PWA"],
+      title: t('projects.project3.title'),
+      description: t('projects.project3.description'),
+      tech: t('projects.project3.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
       demoUrl: "#",
       codeUrl: "#",
@@ -36,9 +36,9 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "A modern portfolio website with smooth animations, dark mode support, and responsive design.",
-      tech: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
+      title: t('projects.project4.title'),
+      description: t('projects.project4.description'),
+      tech: t('projects.project4.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
       demoUrl: "#",
       codeUrl: "#",
@@ -46,9 +46,9 @@ const ProjectsSection = () => {
     },
     {
       id: 5,
-      title: "Chat Application",
-      description: "Real-time chat application with private messaging, group chats, and file sharing capabilities.",
-      tech: ["React", "Firebase", "Material-UI", "WebRTC"],
+      title: t('projects.project5.title'),
+      description: t('projects.project5.description'),
+      tech: t('projects.project5.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
       demoUrl: "#",
       codeUrl: "#",
@@ -56,9 +56,9 @@ const ProjectsSection = () => {
     },
     {
       id: 6,
-      title: "Expense Tracker",
-      description: "Personal finance management app with budget tracking, expense categorization, and financial insights.",
-      tech: ["React Native", "Redux", "Chart.js", "SQLite"],
+      title: t('projects.project6.title'),
+      description: t('projects.project6.description'),
+      tech: t('projects.project6.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
       demoUrl: "#",
       codeUrl: "#",
@@ -99,10 +99,10 @@ const ProjectsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
-            Featured Projects
+            {t('projects.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience in web development.
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
@@ -145,14 +145,23 @@ const ProjectsSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
+                  {Array.isArray(project.tech) ? (
+                    (project.tech as string[]).map((tech: string, techIndex: number) => (
+                      <span
+                        key={`p-${project.id}-tech-${techIndex}`}
+                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))
+                  ) : (
                     <span
-                      key={techIndex}
+                      key={`p-${project.id}-tech`}
                       className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
                     >
-                      {tech}
+                      {String(project.tech)}
                     </span>
-                  ))}
+                  )}
                 </div>
                 
                 <div className="flex gap-4 pt-4">
@@ -162,7 +171,7 @@ const ProjectsSection = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Live Demo
+                    {t('projects.liveDemo')}
                   </motion.a>
                   <motion.a
                     href={project.codeUrl}
@@ -170,7 +179,7 @@ const ProjectsSection = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    View Code
+                    {t('projects.viewCode')}
                   </motion.a>
                 </div>
               </div>
@@ -186,7 +195,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white text-center mb-12">
-            Other Projects
+            {t('projects.otherTitle')}
           </h3>
           
           <motion.div
@@ -232,14 +241,23 @@ const ProjectsSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
+                  {Array.isArray(project.tech) ? (
+                    (project.tech as string[]).map((tech: string, techIndex: number) => (
+                      <span
+                        key={`p-${project.id}-tech-${techIndex}`}
+                        className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))
+                  ) : (
                     <span
-                      key={techIndex}
+                      key={`p-${project.id}-tech`}
                       className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded"
                     >
-                      {tech}
+                      {String(project.tech)}
                     </span>
-                  ))}
+                  )}
                 </div>
               </motion.div>
             ))}
