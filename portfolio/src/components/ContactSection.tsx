@@ -1,8 +1,16 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { ReactNode } from 'react';
+
+interface ContactMethod {
+  icon: ReactNode;
+  title?: string;
+  value?: string;
+  href?: string;
+  description?: string;
+}
+
 const ContactSection = () => {
   const { t } = useTranslation('common');
   const [formData, setFormData] = useState({
@@ -35,7 +43,6 @@ const ContactSection = () => {
       }
     }
   };
-
   const itemVariants = {
     hidden: { y: 50, opacity: 0 },
     visible: {
@@ -45,7 +52,7 @@ const ContactSection = () => {
     }
   };
 
-  const contactMethods = [
+  const contactMethods: ContactMethod[] = [
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,22 +136,28 @@ const ContactSection = () => {
                   className="flex items-start p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
-                  target={method.href.startsWith('http') ? '_blank' : undefined}
-                  rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  target={method.href && method.href.startsWith('http') ? '_blank' : undefined}
+                  rel={method.href && method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 >
                   <div className="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors duration-200">
                     {method.icon}
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-semibold text-gray-800 dark:text-white mb-1">
-                      {method.title}
-                    </h4>
-                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">
-                      {method.value}
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {method.description}
-                    </p>
+                    {method.title && (
+                      <h4 className="font-semibold text-gray-800 dark:text-white mb-1">
+                        {method.title}
+                      </h4>
+                    )}
+                    {method.value && (
+                      <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                        {method.value}
+                      </p>
+                    )}
+                    {method.description && (
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {method.description}
+                      </p>
+                    )}
                   </div>
                 </motion.a>
               ))}
@@ -162,7 +175,7 @@ const ContactSection = () => {
                 {t('contact.followMe')}
               </h4>
               <div className="flex space-x-4">
-                {contactMethods.filter(method => ['Twitter', 'LinkedIn'].includes(method.title)).map((social, index) => (
+                {contactMethods.filter(method => method.title && ['Twitter', 'LinkedIn'].includes(method.title)).map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
