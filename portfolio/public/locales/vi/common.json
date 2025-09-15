@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "title": "Xin chào, tôi là Hùng — Frontend Developer",
+    "subtitle": "Xây dựng những trải nghiệm web đẹp và hữu ích",
+    "viewProjects": "Xem dự án",
+    "contactMe": "Liên hệ"
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "subtitle": "Tôi là một Frontend Developer đam mê với hơn 1 năm kinh nghiệm tạo ra những ứng dụng web đẹp và hữu ích.",
+    "myJourney": "Hành trình của tôi",
+    "skills": "Kỹ năng & Công nghệ",
+    "journey1": "Bắt đầu hành trình phát triển web từ 1 năm trước, tôi luôn đam mê tạo ra những ứng dụng web thân thiện với người dùng và hấp dẫn về mặt thị giác. Chuyên môn của tôi nằm ở các framework JavaScript hiện đại, đặc biệt là React và Next.js.",
+    "journey2": "Tôi thích biến những vấn đề phức tạp thành những thiết kế đơn giản, đẹp và trực quan. Khi không code, bạn sẽ thấy tôi khám phá các công nghệ mới, đóng góp cho các dự án mã nguồn mở, hoặc chia sẻ kiến thức với cộng đồng developer.",
+    "journey3": "Mục tiêu của tôi là xây dựng những sản phẩm cung cấp trải nghiệm hoàn hảo từng pixel, hiệu suất cao trong khi vẫn duy trì code sạch và có thể mở rộng.",
+    "stats": {
+      "experience": "Năm kinh nghiệm",
+      "projects": "Dự án hoàn thành",
+      "clients": "Khách hàng hài lòng", 
+      "satisfaction": "Tỷ lệ hài lòng"
+    }
+  },
+  "projects": {
+    "title": "Dự án nổi bật",
+    "subtitle": "Đây là một số dự án gần đây của tôi thể hiện kỹ năng và kinh nghiệm trong phát triển web.",
+    "otherTitle": "Dự án khác",
+    "liveDemo": "Demo trực tiếp",
+    "viewCode": "Xem mã nguồn",
+    "project1": {
+      "title": "E-commerce Website",
+      "description": "Website bán hàng trực tuyến với hệ thống quản lý đơn hàng, thanh toán và quản lý sản phẩm.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Prisma"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project2": {
+      "title": "Ứng dụng Quản lý Công việc",
+      "description": "Ứng dụng quản lý công việc với tính năng cập nhật thời gian thực, kéo thả và hỗ trợ tổ chức nhóm.",
+      "tech": ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project3": {
+      "title": "Bảng điều khiển Thời tiết",
+      "description": "Bảng điều khiển thời tiết với dự báo thời tiết dựa trên vị trí, bản đồ tương tác và phân tích thời tiết chi tiết.",
+      "tech": ["Vue.js", "API Integration", "Chart.js", "CSS3", "PWA"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project4": {
+      "title": "Website Portfolio",
+      "description": "Website portfolio với các hiệu ứng mượt mà, hỗ trợ chế độ tối, và thiết kế phản hồi.",
+      "tech": ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project5": {
+      "title": "Ứng dụng Chat",
+      "description": "Ứng dụng chat thời gian thực với tin nhắn riêng tư, chat nhóm và khả năng chia sẻ tệp.",
+      "tech": ["React", "Firebase", "Material-UI", "WebRTC"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project6": {
+      "title": "Ứng dụng Quản lý Chi tiêu",
+      "description": "Ứng dụng quản lý tài chính với theo dõi ngân sách, phân loại chi tiêu và thông tin tài chính.",
+      "tech": ["React Native", "Redux", "Chart.js", "SQLite"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    }
+  },
+  "contact": {
+    "title": "Hãy cùng làm việc",
+    "subtitle": "Tôi luôn quan tâm đến những cơ hội và sự hợp tác mới. Hãy thảo luận về cách chúng ta có thể tạo ra điều gì đó tuyệt vời cùng nhau!",
+    "getInTouch": "Liên lạc",
+    "sendMessage": "Gửi tin nhắn",
+    "name": "Tên của bạn",
+    "email": "Địa chỉ email",
+    "message": "Tin nhắn",
+    "send": "Gửi tin nhắn",
+    "followMe": "Theo dõi tôi",
+    "emailDesc": "Gửi email cho tôi bất cứ lúc nào",
+    "phoneDesc": "Gọi cho tôi khi có việc gấp",
+    "twitterDesc": "Theo dõi tôi để cập nhật",
+    "linkedinDesc": "Kết nối với tôi một cách chuyên nghiệp",
+    "contactMethods": {
+      "email": {
+        "title": "Email",
+        "value": "hung.dev@example.com",
+        "href": "mailto:hung.dev@example.com",
+        "description": "Gửi email cho tôi bất cứ lúc nào"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "+84 123 456 789",
+        "href": "tel:+84123456789",
+        "description": "Gọi cho tôi khi có việc gấp"
+      },
+      "twitter": {
+        "title": "Twitter",
+        "value": "@hung_dev",
+        "href": "https://twitter.com/hung_dev",
+        "description": "Theo dõi tôi để cập nhật"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "value": "linkedin.com/in/hung",
+        "href": "https://linkedin.com/in/hung",
+        "description": "Kết nối với tôi một cách chuyên nghiệp"
+      }
+    },
+    "formData":{
+      "enterYourName": "Nhập tên của bạn",
+      "enterYourEmail": "Nhập địa chỉ email của bạn",
+      "enterYourMessage": "Nói với tôi về dự án của bạn hoặc xin chào..."
+    },
+    "formSubmit":{
+      "thankYou": "Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ trả lời bạn sớm nhất có thể."
+    }
+  }
+}

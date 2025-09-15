@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@import "./styles/theme/index.css";
+
+/* Next.js theme inline compatibility */
+@theme inline {
+  --color-background: var(--surface-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}

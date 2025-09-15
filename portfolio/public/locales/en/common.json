@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About", 
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm Hung — Frontend Developer",
+    "subtitle": "Building beautiful and functional web experiences",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "I'm a passionate Frontend Developer with 1+ years of experience creating beautiful and functional web applications.",
+    "myJourney": "My Journey",
+    "skills": "Skills & Technologies",
+    "journey1": "Started my journey in web development 1 years ago, I've been passionate about creating user-friendly and visually appealing web applications. My expertise lies in modern JavaScript frameworks, particularly React and Next.js.",
+    "journey2": "I love turning complex problems into simple, beautiful and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.",
+    "journey3": "My goal is to build products that provide pixel-perfect, performant experiences while maintaining clean and scalable code.",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed", 
+      "clients": "Happy Clients",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Here are some of my recent projects that showcase my skills and experience in web development.",
+    "otherTitle": "Other Projects",
+    "liveDemo": "Live Demo",
+    "viewCode": "View Code",
+    "project1": {
+      "title": "E-commerce Platform",
+      "description": "A full-stack e-commerce solution built with Next.js and Stripe integration. Features include user authentication, product catalog, shopping cart, and secure payment processing.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Prisma"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project2": {
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "tech": ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project3": {
+      "title": "Weather Dashboard",
+      "description": "A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
+      "tech": ["Vue.js", "API Integration", "Chart.js", "CSS3", "PWA"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project4": {
+      "title": "Portfolio Website",
+      "description": "A modern portfolio website with smooth animations, dark mode support, and responsive design.",
+      "tech": ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project5": {
+      "title": "Chat Application",
+      "description": "Real-time chat application with private messaging, group chats, and file sharing capabilities.",
+      "tech": ["React", "Firebase", "Material-UI", "WebRTC"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    "project6": {
+      "title": "Expense Tracker",
+      "description": "Personal finance management app with budget tracking, expense categorization, and financial insights.",
+      "tech": ["React Native", "Redux", "Chart.js", "SQLite"],
+      "image": "/placeholder-project.jpg",
+      "demoUrl": "#",
+      "codeUrl": "#"
+    }
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "I'm always interested in new opportunities and collaborations. Let's discuss how we can create something amazing together!",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send a Message",
+    "name": "Your Name",
+    "email": "Email Address",
+    "message": "Message", 
+    "send": "Send Message",
+    "followMe": "Follow Me",
+    "emailDesc": "Send me an email anytime",
+    "phoneDesc": "Call me for urgent matters",
+    "twitterDesc": "Follow me for updates",
+    "linkedinDesc": "Connect with me professionally",
+    "contactMethods": {
+      "email": {
+        "title": "Email",
+        "value": "hung.dev@example.com",
+        "href": "mailto:hung.dev@example.com",
+        "description": "Send me an email anytime"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "+84 123 456 789",
+        "href": "tel:+84123456789",
+        "description": "Call me for urgent matters"
+      },
+      "twitter": {
+        "title": "Twitter",
+        "value": "@hung_dev",
+        "href": "https://twitter.com/hung_dev",
+        "description": "Follow me for updates"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "value": "linkedin.com/in/hung",
+        "href": "https://linkedin.com/in/hung",
+        "description": "Connect with me professionally"
+      }
+    },
+    "formData":{
+      "enterYourName": "Enter your full name",
+      "enterYourEmail": "Enter your email address",
+      "enterYourMessage": "Tell me about your project or just say hello..."
+    },
+    "formSubmit":{
+      "thankYou": "Thank you for your message! I will get back to you soon."
+    }
+  }
+}
