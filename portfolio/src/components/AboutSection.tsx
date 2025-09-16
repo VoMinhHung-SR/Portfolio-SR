@@ -31,7 +31,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="about" className="py-20 relative">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -40,10 +40,10 @@ const AboutSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {t('about.title')}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {t('about.subtitle')}
           </p>
         </motion.div>

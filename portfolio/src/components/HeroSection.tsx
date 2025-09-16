@@ -7,7 +7,6 @@ import { useTranslation } from 'next-i18next';
 const HeroSection = () => {
   const { t } = useTranslation('common');
   const [text, setText] = useState('');
-  const [fullText, setFullText] = useState('');
   const [showButtons, setShowButtons] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -21,7 +20,6 @@ const HeroSection = () => {
     if (!isClient) return;
     
     const titleText = t('hero.title');
-    setFullText(titleText);
     
     let index = 0;
     setText('');
@@ -78,33 +76,7 @@ const HeroSection = () => {
 
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background */}
-
-      {/* Floating particles - only render on client */}
-      {isClient && (
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [-20, -100, -20],
-                opacity: [0.2, 0.8, 0.2],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-      )}
+    <section id="hero" className="min-h-screen flex items-center justify-center relative">
 
       <motion.div
         className="text-center z-10 max-w-4xl mx-auto px-4"
@@ -118,35 +90,37 @@ const HeroSection = () => {
           variants={itemVariants}
         >
           <motion.div
-            className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg"
+            className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/25"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             <svg
               className="w-10 h-10 text-white"
               fill="currentColor"
-              viewBox="0 0 20 20"
+              viewBox="0 0 24 24"
             >
-              <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z" />
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
           </motion.div>
         </motion.div>
 
         {/* Typing Text */}
         <motion.div
-          className="mb-8"
+          className="mb-12"
           variants={itemVariants}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
             {isClient ? text : t('hero.title')}
             {isClient && (
               <motion.span
-                className="inline-block w-1 h-8 md:h-12 bg-blue-500 ml-1"
+                className="inline-block w-1 h-8 md:h-12 lg:h-16 bg-blue-400 ml-2"
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
               />
             )}
           </h1>
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300"
+            className="text-xl md:text-2xl lg:text-3xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: isClient && showButtons ? 1 : (isClient ? 0 : 1) }}
             transition={{ delay: 0.5 }}
@@ -158,7 +132,7 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         {(isClient ? showButtons : true) && (
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -173,9 +147,10 @@ const HeroSection = () => {
                 const element = document.getElementById('projects');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 relative overflow-hidden group"
             >
-              {t('hero.viewProjects')}
+              <span className="relative z-10">{t('hero.viewProjects')}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.button>
 
             <motion.button
@@ -189,26 +164,37 @@ const HeroSection = () => {
                 const element = document.getElementById('contact');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300"
+              className="px-10 py-4 border-2 border-gray-400 text-gray-300 font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm"
             >
               {t('hero.contactMe')}
             </motion.button>
           </motion.div>
         )}
 
-        {/* Scroll indicator */}
+        {/* Enhanced Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: isClient && showButtons ? 1 : (isClient ? 0 : 1), y: 0 }}
           transition={{ delay: 1.5 }}
         >
+          <motion.span
+            className="text-gray-400 text-sm mb-2 font-light"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            Scroll
+          </motion.span>
           <motion.div
-            className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
-            animate={{ y: [0, 10, 0] }}
+            className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center relative"
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <motion.div className="w-1 h-3 bg-gray-400 rounded-full mt-2" />
+            <motion.div 
+              className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            />
           </motion.div>
         </motion.div>
       </motion.div>
