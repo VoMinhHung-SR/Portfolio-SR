@@ -85,7 +85,7 @@ const HeroSection = () => {
         animate="visible"
       >
         {/* Avatar */}
-        <motion.div
+        {/* <motion.div
           className="mb-8 flex justify-center"
           variants={itemVariants}
         >
@@ -102,18 +102,19 @@ const HeroSection = () => {
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Typing Text */}
         <motion.div
           className="mb-12"
           variants={itemVariants}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold justify-end
+           text-white mb-6 leading-tight">
             {isClient ? text : t('hero.title')}
             {isClient && (
               <motion.span
-                className="inline-block w-1 h-8 md:h-12 lg:h-16 bg-blue-400 ml-2"
+                className="inline-block w-5 h-1 bg-white ml-1"
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
               />

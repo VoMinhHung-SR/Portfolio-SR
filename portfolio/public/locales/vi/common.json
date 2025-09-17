@@ -6,7 +6,7 @@
     "contact": "Liên hệ"
   },
   "hero": {
-    "title": "Xin chào, tôi là Hùng — Frontend Developer",
+    "title": "Xin chào, tui là Hùng — Frontend Developer",
     "subtitle": "Xây dựng những trải nghiệm web đẹp và hữu ích",
     "viewProjects": "Xem dự án",
     "contactMe": "Liên hệ"
@@ -98,14 +98,14 @@
     "contactMethods": {
       "email": {
         "title": "Email",
-        "value": "hung.dev@example.com",
-        "href": "mailto:hung.dev@example.com",
+        "value": "vominhhung1546@gmail.com",
+        "href": "mailto:vominhhung1546@gmail.com",
         "description": "Gửi email cho tôi bất cứ lúc nào"
       },
       "phone": {
         "title": "Phone",
-        "value": "+84 123 456 789",
-        "href": "tel:+84123456789",
+        "value": "+84 382 590 839",
+        "href": "tel:+84382590839",
         "description": "Gọi cho tôi khi có việc gấp"
       },
       "twitter": {
@@ -116,9 +116,9 @@
       },
       "linkedin": {
         "title": "LinkedIn",
-        "value": "linkedin.com/in/hung",
-        "href": "https://linkedin.com/in/hung",
-        "description": "Kết nối với tôi một cách chuyên nghiệp"
+        "value": "Võ Minh Hùng",
+        "href": "https://linkedin.com/in/hiiro-dev",
+        "description": "Kết nối với tui"
       }
     },
     "formData":{
