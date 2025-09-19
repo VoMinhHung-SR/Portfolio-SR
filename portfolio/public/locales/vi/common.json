@@ -7,7 +7,7 @@
   },
   "hero": {
     "title": "Xin chào, tui là Hùng — Frontend Developer",
-    "subtitle": "Xây dựng những trải nghiệm web đẹp và hữu ích",
+    "subtitle": "Code mượt, UI mướt — powered by cà phê \u2615",
     "viewProjects": "Xem dự án",
     "contactMe": "Liên hệ"
   },
@@ -108,16 +108,16 @@
         "href": "tel:+84382590839",
         "description": "Gọi cho tôi khi có việc gấp"
       },
-      "twitter": {
-        "title": "Twitter",
-        "value": "@hung_dev",
-        "href": "https://twitter.com/hung_dev",
-        "description": "Theo dõi tôi để cập nhật"
-      },
       "linkedin": {
         "title": "LinkedIn",
         "value": "Võ Minh Hùng",
         "href": "https://linkedin.com/in/hiiro-dev",
+        "description": "Kết nối với tui"
+      },
+      "zalo": {
+        "title": "Zalo",
+        "value": "0382590839",
+        "href": "https://zalo.me/0382590839",
         "description": "Kết nối với tui"
       }
     },
