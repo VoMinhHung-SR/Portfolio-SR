@@ -6,19 +6,19 @@
     "contact": "Liên hệ"
   },
   "hero": {
-    "title": "Xin chào, tui là Hùng — Frontend Developer",
-    "subtitle": "Code mượt, UI mướt — powered by cà phê \u2615",
+    "title": "Xin chào, mình là Hùng — Frontend Developer",
+    "subtitle": "Code mượt, UI mướt — powered by \u2615",
     "viewProjects": "Xem dự án",
     "contactMe": "Liên hệ"
   },
   "about": {
     "title": "Giới thiệu",
-    "subtitle": "Tôi là một Frontend Developer đam mê với hơn 1 năm kinh nghiệm tạo ra những ứng dụng web đẹp và hữu ích.",
-    "myJourney": "Hành trình của tôi",
+    "subtitle": "Mình là một Frontend Developer với hơn 1 năm kinh nghiệm tạo ra những ứng dụng web đẹp và hữu ích.",
+    "myJourney": "Hành trình của mình",
     "skills": "Kỹ năng & Công nghệ",
-    "journey1": "Bắt đầu hành trình phát triển web từ 1 năm trước, tôi luôn đam mê tạo ra những ứng dụng web thân thiện với người dùng và hấp dẫn về mặt thị giác. Chuyên môn của tôi nằm ở các framework JavaScript hiện đại, đặc biệt là React và Next.js.",
-    "journey2": "Tôi thích biến những vấn đề phức tạp thành những thiết kế đơn giản, đẹp và trực quan. Khi không code, bạn sẽ thấy tôi khám phá các công nghệ mới, đóng góp cho các dự án mã nguồn mở, hoặc chia sẻ kiến thức với cộng đồng developer.",
-    "journey3": "Mục tiêu của tôi là xây dựng những sản phẩm cung cấp trải nghiệm hoàn hảo từng pixel, hiệu suất cao trong khi vẫn duy trì code sạch và có thể mở rộng.",
+    "journey1": "Bắt đầu hành trình phát triển web từ 1 năm trước, mình luôn đam mê tạo ra những ứng dụng web thân thiện với người dùng và hấp dẫn về mặt thị giác. Chuyên môn của mình nằm ở các framework JavaScript hiện đại, đặc biệt là React và Next.js.",
+    "journey2": "Mình thích biến những vấn đề phức tạp thành những thiết kế đơn giản, đẹp và trực quan. Khi không code, bạn sẽ thấy mình khám phá các công nghệ mới, đóng góp cho các dự án mã nguồn mở, hoặc chia sẻ kiến thức với cộng đồng developer.",
+    "journey3": "Mục tiêu của mình là xây dựng những sản phẩm cung cấp trải nghiệm hoàn hảo từng pixel, hiệu suất cao trong khi vẫn duy trì code sạch và có thể mở rộng.",
     "stats": {
       "experience": "Năm kinh nghiệm",
       "projects": "Dự án hoàn thành",

@@ -77,34 +77,12 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative">
-
       <motion.div
         className="text-center z-10 max-w-4xl mx-auto px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Avatar */}
-        {/* <motion.div
-          className="mb-8 flex justify-center"
-          variants={itemVariants}
-        >
-          <motion.div
-            className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/25"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <svg
-              className="w-10 h-10 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-          </motion.div>
-        </motion.div> */}
-
-        {/* Typing Text */}
         <motion.div
           className="mb-12"
           variants={itemVariants}
