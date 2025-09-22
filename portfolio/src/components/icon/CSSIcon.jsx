@@ -1,26 +1,15 @@
-const CSSIcon = ({ width = 24, height = 24, className = "w-6 h-6" }) => {
+const CSSIcon = ({ width = 24, height = 24, className = "rounded" }) => {
     return (
-        <svg viewBox="0 0 48 48"
+        <svg viewBox="0 0 24 24"
          xmlns="http://www.w3.org/2000/svg" fill="currentColor"
          className={className}
          width={width}
          height={height}
         >
-        <g strokeWidth="0"/>
-        <g strokeLinecap="round" strokeLinejoin="round"/>
-        <g>
-          <title>css</title>
-          <g>
-            <g>
-              <rect width="48" height="48" fill="none"/>
-            </g>
-            <g>
-              <path d="M24,46,8.3,41.7,5,4H43L39.7,41.7ZM12,38.6l12,3.3,12-3.3L38.6,8H9.4Z"/>
-              <path d="M14,13H34L32.2,34.3,23.9,37l-8.4-2.1-.9-7.2h4.5v3.6l4.8.9,4.4-.9V25.9H14.6l-.3-4.5a2.3,2.3,0,0,1,1.5-.6c6.9,0,12.5.6,12.5.6V17.8H14.6Z"/>
-            </g>
-          </g>
-        </g>
-      </svg>
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="m12 23-7.85-2.15L2.5 2h19l-1.65 18.85Zm-6-3.7 6 1.65 6-1.65L19.3 4H4.7Z"/>
+            <path d="M7 6.5h10l-.9 10.65-4.15 1.35-4.2-1.05-.45-3.6h2.25v1.8l2.4.45 2.2-.45v-2.7H7.3l-.15-2.25a1.15 1.15 0 0 1 .75-.3c3.45 0 6.25.3 6.25.3V8.9H7.3Z"/>
+        </svg>
       
     )
 }
