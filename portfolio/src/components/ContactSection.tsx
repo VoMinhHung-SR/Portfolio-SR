@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
-import ZaloIcon from './icon/ZaloIcon';
+import ZaloIcon from './icon/techs/ZaloIcon';
 
 interface ContactMethod {
   icon: ReactNode;

@@ -37,27 +37,21 @@
   will-change: transform;
 }
 
-/* CSS Animation for Skills Carousel */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
+/* Perfect seamless carousel animation */
+@keyframes infinite-scroll {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
-.animate-scroll {
-  animation: scroll 45s linear infinite;
-  animation-fill-mode: both;
+.animate-seamless {
+  animation: infinite-scroll 45s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
-
-.animate-scroll:hover {
+.animate-seamless:hover {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-scroll {
-    animation: none;
-  }
+  .animate-seamless { animation: none; }
 }

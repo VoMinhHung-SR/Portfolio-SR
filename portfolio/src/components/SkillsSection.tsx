@@ -1,15 +1,16 @@
 import React from "react";
-import HTMLIcon from "./icon/HTMLIcon";
-import CSSIcon from "./icon/CSSIcon";
-import JavascriptIcon from "./icon/JavascriptIcon";
-import ReactIcon from "./icon/ReactIcon";
-import NextIcon from "./icon/NextIcon";
-import TypescriptIcon from "./icon/TypescriptIcon";
-import BooStrapIcon from "./icon/BoostrapIcon";
-import TailwindIcon from "./icon/TailwindIcon";
-import JqueryIcon from "./icon/JqueryIcon";
+import HTMLIcon from "./icon/techs/HTMLIcon";
+import CSSIcon from "./icon/techs/CSSIcon";
+import JavascriptIcon from "./icon/techs/JavascriptIcon";
+import ReactIcon from "./icon/techs/ReactIcon";
+import NextIcon from "./icon/techs/NextIcon";
+import TypescriptIcon from "./icon/techs/TypescriptIcon";
+import BooStrapIcon from "./icon/techs/BoostrapIcon";
+import TailwindIcon from "./icon/techs/TailwindIcon";
+import JqueryIcon from "./icon/techs/JqueryIcon";
+import PythonIcon from "./icon/techs/PythonIcon";
+import JavaIcon from "./icon/techs/JavaIcon";
 
-// Skill Item Component
 const SkillItem = ({ skill, index, setPrefix }: { 
   skill: { Icon: React.ElementType; name: string }; 
   index: number; 
@@ -37,32 +38,60 @@ const SkillsSection = () => {
     { Icon: TailwindIcon, name: "Tailwind CSS" },
   ];
 
+  const additionalSkill = [
+    { Icon: PythonIcon, name: "Python" },
+    { Icon: JavaIcon, name: "Java" },
+
+    { Icon: JavascriptIcon, name: "JavaScript" },
+    { Icon: TypescriptIcon, name: "TypeScript" },
+    { Icon: JqueryIcon, name: "jQuery" },
+    { Icon: ReactIcon, name: "React" },
+    { Icon: NextIcon, name: "Next.js" },
+    { Icon: BooStrapIcon, name: "Bootstrap" },
+    { Icon: TailwindIcon, name: "Tailwind CSS" },
+
+  ];
+
   return (
-    <div className="flex flex-col items-center justify-center gap-8 py-16">
-      <h2 className="text-3xl font-bold text-white mb-4">Skills</h2>
-      
-      <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
-        <div 
-          className="flex gap-8 animate-scroll"
-          style={{ 
-            animation: 'scroll 45s linear infinite',
-            width: 'calc(300% + 4rem)' // 3x width for seamless loop
-          }}
-        >
-          {/* Render 3 sets for seamless loop */}
-          {Array.from({ length: 3 }, (_, setIndex) => 
-            skills.map((skill, index) => (
-              <SkillItem 
-                key={`set-${setIndex}-${index}`}
-                skill={skill} 
-                index={index} 
-                setPrefix={`set-${setIndex}`}
-              />
-            ))
-          )}
+    <>
+      <div className="flex flex-col items-center justify-center gap-8 py-16">
+        <h2 className="text-3xl font-bold text-white mb-4">Skills</h2>
+        <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
+          <div className="flex gap-8 animate-seamless w-max">
+            {Array.from({ length: 2 }, (_, setIndex) => 
+              skills.map((skill, index) => (
+                <SkillItem 
+                  key={`set-${setIndex}-${index}`}
+                  skill={skill} 
+                  index={index} 
+                  setPrefix={`set-${setIndex}`}
+                />
+              ))
+            )}
+          </div>
         </div>
-       </div>
-    </div>
+      </div>
+
+      <div className="flex flex-col items-center justify-center gap-8 py-16">
+        <h3 className="text-2xl font-bold text-white mb-4">Additional Skills</h3>
+        <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
+          <div className="flex gap-8 animate-seamless w-max">
+          {Array.from({ length: 2 }, (_, setIndex) => 
+              additionalSkill.map((skill, index) => (
+                <SkillItem 
+                  key={`add-set-${setIndex}-${index}`}
+                  skill={skill} 
+                  index={index} 
+                  setPrefix={`add-set-${setIndex}`}
+                />
+              ))
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+   
+       
   );
 };
 
