@@ -6,6 +6,7 @@ import AboutSection from "../components/AboutSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
 import GlobalParticles from "../components/animate/GlobalParticles";
+import SkillsSection from "../components/SkillsSection";
 
 export default function Home() {
   return (
@@ -18,9 +19,13 @@ export default function Home() {
       
       {/* Content */}
       <div className="relative z-10">
+        
         <Navigation />
         <HeroSection />
+
         <AboutSection />
+        <SkillsSection />
+
         <ProjectsSection />
         <ContactSection />
 

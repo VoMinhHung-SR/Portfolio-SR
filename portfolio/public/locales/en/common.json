@@ -7,7 +7,7 @@
   },
   "hero": {
     "title": "Hi, I'm Hung — Frontend Developer",
-    "subtitle": "Building beautiful and functional web experiences",
+    "subtitle": "Code clean, UI smooth — powered by \u2615",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
   },
@@ -98,14 +98,14 @@
     "contactMethods": {
       "email": {
         "title": "Email",
-        "value": "hung.dev@example.com",
-        "href": "mailto:hung.dev@example.com",
+        "value": "vominhhung1546@gmail.com",
+        "href": "mailto:vominhhung1546@gmail.com",
         "description": "Send me an email anytime"
       },
       "phone": {
         "title": "Phone",
-        "value": "+84 123 456 789",
-        "href": "tel:+84123456789",
+        "value": "+84 382 590 839",
+        "href": "tel:+84382590839",
         "description": "Call me for urgent matters"
       },
       "twitter": {
@@ -116,9 +116,15 @@
       },
       "linkedin": {
         "title": "LinkedIn",
-        "value": "linkedin.com/in/hung",
-        "href": "https://linkedin.com/in/hung",
-        "description": "Connect with me professionally"
+        "value": "Võ Minh Hùng",
+        "href": "https://linkedin.com/in/hiiro-dev",
+        "description": "Connect with me"
+      },
+      "zalo": {
+        "title": "Zalo",
+        "value": "0382590839",
+        "href": "https://zalo.me/0382590839",
+        "description": "Connect with me"
       }
     },
     "formData":{

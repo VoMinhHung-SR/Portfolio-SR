@@ -9,3 +9,49 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
 }
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.carousel-smooth {
+  scroll-behavior: smooth;
+  will-change: scroll-position;
+  overscroll-behavior: none;
+  touch-action: pan-x;
+}
+
+.carousel-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.carousel-item {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Perfect seamless carousel animation */
+@keyframes infinite-scroll {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-seamless {
+  animation: infinite-scroll 45s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+.animate-seamless:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-seamless { animation: none; }
+}

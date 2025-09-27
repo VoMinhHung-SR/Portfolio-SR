@@ -1,62 +1,94 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 
 const GlobalParticles = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
+  // Generate stable particle data using useMemo to prevent re-generation on re-renders
+  const particleData = useMemo(() => {
+    const particles = [];
+    const stars = [];
+    
+    // Generate 60 floating particles
+    for (let i = 0; i < 60; i++) {
+      particles.push({
+        id: i,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        size: Math.random() * 3 + 1,
+        duration: 2 + Math.random() * 3,
+        delay: Math.random() * 4,
+      });
+    }
+    
+    // Generate 20 twinkling stars
+    for (let i = 0; i < 20; i++) {
+      stars.push({
+        id: `star-${i}`,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        size: Math.random() * 2 + 1,
+        duration: 1.5 + Math.random() * 2,
+        delay: Math.random() * 3,
+      });
+    }
+    
+    return { particles, stars };
+  }, []); // Empty dependency array ensures this only runs once
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
       {/* Floating particles */}
-      {[...Array(60)].map((_, i) => (
+      {particleData.particles.map((particle) => (
         <motion.div
-          key={i}
+          key={particle.id}
           className="absolute bg-blue-300 rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: `${Math.random() * 3 + 1}px`,
-            height: `${Math.random() * 3 + 1}px`,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+          }}
+          initial={{ 
+            opacity: 0,
+            scale: 1
           }}
           animate={{
             opacity: [0, 1, 0],
             scale: [0.5, 1, 0.5],
           }}
           transition={{
-            duration: 2 + Math.random() * 3,
+            duration: particle.duration,
             repeat: Infinity,
-            delay: Math.random() * 4,
+            delay: particle.delay,
             ease: "easeInOut"
           }}
         />
       ))}
       
       {/* Twinkling stars */}
-      {[...Array(20)].map((_, i) => (
+      {particleData.stars.map((star) => (
         <motion.div
-          key={`star-${i}`}
+          key={star.id}
           className="absolute bg-white rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: `${Math.random() * 2 + 1}px`,
-            height: `${Math.random() * 2 + 1}px`,
+            left: `${star.left}%`,
+            top: `${star.top}%`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+          }}
+          initial={{ 
+            opacity: 0,
+            scale: 0.8
           }}
           animate={{
             opacity: [0.3, 1, 0.3],
             scale: [0.8, 1.2, 0.8],
           }}
           transition={{
-            duration: 1.5 + Math.random() * 2,
+            duration: star.duration,
             repeat: Infinity,
-            delay: Math.random() * 3,
+            delay: star.delay,
             ease: "easeInOut"
           }}
         />

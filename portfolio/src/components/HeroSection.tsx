@@ -77,43 +77,22 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative">
-
       <motion.div
         className="text-center z-10 max-w-4xl mx-auto px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Avatar */}
-        <motion.div
-          className="mb-8 flex justify-center"
-          variants={itemVariants}
-        >
-          <motion.div
-            className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/25"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <svg
-              className="w-10 h-10 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-          </motion.div>
-        </motion.div>
-
-        {/* Typing Text */}
         <motion.div
           className="mb-12"
           variants={itemVariants}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold justify-end
+           text-white mb-6 leading-tight">
             {isClient ? text : t('hero.title')}
             {isClient && (
               <motion.span
-                className="inline-block w-1 h-8 md:h-12 lg:h-16 bg-blue-400 ml-2"
+                className="inline-block w-5 h-1 bg-white ml-1"
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
               />
