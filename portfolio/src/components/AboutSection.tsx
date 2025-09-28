@@ -111,9 +111,7 @@ const AboutSection = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Stats */}
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -135,7 +133,7 @@ const AboutSection = () => {
               </div>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

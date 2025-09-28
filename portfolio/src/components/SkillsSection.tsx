@@ -17,6 +17,7 @@ import PostgreSQLIcon from "./icon/techs/PostgreSQLIcon";
 import FirebaseIcon from "./icon/techs/FirebaseIcon";
 import DockerIcon from "./icon/techs/DockerIcon";
 import PostmanIcon from "./icon/techs/PostmanIcon";
+import { motion } from "framer-motion";
 
 interface Skill {
   Icon: React.ElementType;
@@ -95,17 +96,30 @@ const SkillsSection = () => {
 
   return (
     <>
-      <SkillsList 
-        title="Skills" 
-        skills={coreSkills} 
-        setPrefix="core"
-      />
-      <SkillsList 
-        title="Additional Skills" 
-        skills={additionalSkills} 
-        titleClassName="text-2xl"
-        setPrefix="additional"
-      />
+    <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.2 }}
+      >
+        <SkillsList 
+          title="Skills" 
+          skills={coreSkills} 
+          setPrefix="core" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.4 }}
+      >
+        <SkillsList 
+          title="Additional Skills" 
+          skills={additionalSkills} 
+          titleClassName="text-2xl"
+          setPrefix="additional"
+        />
+      </motion.div>
     </>
   );
 };

@@ -6,7 +6,8 @@
     "contact": "Liên hệ"
   },
   "hero": {
-    "title": "Xin chào, mình là Hùng — Frontend Developer",
+    "greeting": "Xin chào, mình là Hùng",
+    "title": "Frontend Developer",
     "subtitle": "Code mượt, UI mướt — powered by \u2615",
     "viewProjects": "Xem dự án",
     "contactMe": "Liên hệ"

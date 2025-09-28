@@ -6,7 +6,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Hi, I'm Hung — Frontend Developer",
+    "greeting": "Hi, I'm Hung",
+    "title": "Frontend Developer",
     "subtitle": "Code clean, UI smooth — powered by \u2615",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
