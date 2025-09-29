@@ -11,15 +11,16 @@ import VNFlag from './icon/vnFlag.jsx';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('');
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t } = useTranslation('common');
   const router = useRouter();
   const langMenuRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
-    { id: 'hero', label: t('nav.home') },
     { id: 'about', label: t('nav.about') },
+    { id: 'skills', label: t('nav.skills') },
     { id: 'projects', label: t('nav.projects') },
     { id: 'contact', label: t('nav.contact') }
   ];
@@ -29,7 +30,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['hero', 'about', 'projects', 'contact'];
+      const sections = ['about', 'skills', 'projects', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -41,6 +42,9 @@ const Navigation = () => {
       
       if (currentSection) {
         setActiveSection(currentSection);
+      } else if (window.scrollY < 100) {
+        // If we're at the top of the page (hero section), clear active section
+        setActiveSection('');
       }
     };
 
@@ -62,11 +66,35 @@ const Navigation = () => {
     };
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.mobile-menu-container')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Add offset to account for fixed header
+      const headerOffset = 80;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
+    setIsMobileMenuOpen(false);
   };
 
   // Check if we're on the home page (landing page) 
@@ -81,6 +109,7 @@ const Navigation = () => {
   const changeLanguage = (locale: string) => {
     router.push(router.asPath, router.asPath, { locale });
     setIsLangMenuOpen(false);
+    setIsMobileMenuOpen(false);
   };
 
   const languages = [
@@ -104,7 +133,10 @@ const Navigation = () => {
           {/* Logo */}
           <motion.div
             className="font-bold text-xl text-gray-800 dark:text-white cursor-pointer"
-            onClick={() => scrollToSection('hero')}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setActiveSection('');
+            }}
             whileHover={{ scale: 1.05 }}
           >
             {WEB_TITLE}
@@ -138,7 +170,7 @@ const Navigation = () => {
                 );
               } else {
                 // For other pages, use Link navigation
-                const href = item.id === 'hero' ? '/' : `/${item.id}`;
+                const href = `/#${item.id}`;
                 return (
                   <Link
                     key={item.id}
@@ -152,8 +184,8 @@ const Navigation = () => {
             })}
           </div>
 
-          {/* Language Switcher */}
-          <div className="relative" ref={langMenuRef}>
+          {/* Language Switcher - Hidden on mobile */}
+          <div className="relative hidden md:block" ref={langMenuRef}>
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
               className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -202,15 +234,95 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+          <div className="md:hidden mobile-menu-container">
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >
+              {isMobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700"
+        >
+          <div className="px-4 py-4 space-y-2">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              
+              if (isHomePage) {
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
+                      isActive
+                        ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                );
+              } else {
+                return (
+                  <Link
+                    key={item.id}
+                    href={`/#${item.id}`}
+                    className="block w-full text-left px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+            })}
+            
+            {/* Language Switcher in Mobile */}
+            <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-600 dark:text-gray-400">Language</span>
+                <div className="flex space-x-2">
+                  {languages.map((lang) => {
+                    const FlagComponent = lang.flag;
+                    const isCurrentLang = router.locale === lang.code;
+                    
+                    return (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
+                          isCurrentLang
+                            ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
+                            : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                        }`}
+                      >
+                        <FlagComponent className="w-4 h-4" />
+                        <span>{lang.code.toUpperCase()}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </motion.nav>
   );
 };

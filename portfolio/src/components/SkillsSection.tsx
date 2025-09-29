@@ -95,7 +95,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <>
+    <section id="skills" className="py-20 relative">
     <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ const SkillsSection = () => {
           setPrefix="additional"
         />
       </motion.div>
-    </>
+    </section>
   );
 };
 
