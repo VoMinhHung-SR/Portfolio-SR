@@ -17,7 +17,28 @@
     "title": "About Me",
     "subtitle": "I'm a passionate Frontend Developer with 1+ years of experience creating beautiful and functional web applications.",
     "myJourney": "My Journey",
-    "skills": "Skills & Technologies",
+    "experience": "Experience",
+    "timeline": {
+      "current": "Current",
+      "job1": {
+        "title": "Frontend Developer",
+        "company": "ABC Company",
+        "period": "2023 - Present",
+        "description": "Developing web applications using React, Next.js and TypeScript. Working with team to create high-quality products."
+      },
+      "job2": {
+        "title": "Junior Frontend Developer",
+        "company": "XYZ Startup", 
+        "period": "2022 - 2023",
+        "description": "Started web development journey, learning new technologies and participating in real projects."
+      },
+      "job3": {
+        "title": "Freelance Developer",
+        "company": "Freelance",
+        "period": "2021 - 2022",
+        "description": "Working freelance on small projects, building portfolio and gaining real-world experience."
+      }
+    },
     "journey1": "Started my journey in web development 1 years ago, I've been passionate about creating user-friendly and visually appealing web applications. My expertise lies in modern JavaScript frameworks, particularly React and Next.js.",
     "journey2": "I love turning complex problems into simple, beautiful and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.",
     "journey3": "My goal is to build products that provide pixel-perfect, performant experiences while maintaining clean and scalable code.",
@@ -27,6 +48,13 @@
       "clients": "Happy Clients",
       "satisfaction": "Satisfaction Rate"
     }
+  },
+  "skills": {
+    "title": "Skills",
+    "frontendStack": "Frontend Stack",
+    "backendAndTools": "Backend & Tools",
+    "backend": "Backend",
+    "tools": "Tools"
   },
   "projects": {
     "title": "Featured Projects",

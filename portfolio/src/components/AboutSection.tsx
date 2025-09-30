@@ -3,12 +3,19 @@ import { useTranslation } from 'next-i18next';
 
 const AboutSection = () => {
   const { t } = useTranslation('common');
-  const skills = [
-    { name: 'React', level: 90 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'Next.js', level: 88 },
-    { name: 'Tailwind CSS', level: 92 },
-    { name: 'Django Rest Framework', level: 80 },
+  const experiences = [
+    {
+      id: 'job1',
+      isCurrent: true
+    },
+    {
+      id: 'job2', 
+      isCurrent: false
+    },
+    {
+      id: 'job3',
+      isCurrent: false
+    }
   ];
 
   const containerVariants = {
@@ -72,7 +79,7 @@ const AboutSection = () => {
             </div>
           </motion.div>
 
-          {/* Skills */}
+          {/* Experience Timeline */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -80,31 +87,45 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
-              {t('about.skills')}
+              {t('about.experience')}
             </h3>
-            <div className="space-y-4">
-              {skills.map((skill, index) => (
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-600"></div>
+              
+              {experiences.map((experience) => (
                 <motion.div
-                  key={skill.name}
+                  key={experience.id}
                   variants={itemVariants}
-                  className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md"
+                  className="relative flex items-start mb-8 last:mb-0"
                 >
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-medium text-gray-800 dark:text-white">
-                      {skill.name}
-                    </span>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                      {skill.level}%
-                    </span>
+                  {/* Timeline dot */}
+                  <div className="relative z-10 flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-full border-4 border-blue-500 shadow-lg">
+                    <div className={`w-3 h-3 rounded-full ${experience.isCurrent ? 'bg-blue-500' : 'bg-gray-400'}`}></div>
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                    />
+                  
+                  {/* Content */}
+                  <div className="ml-6 flex-1">
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                        <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
+                          {t(`about.timeline.${experience.id}.title`)}
+                        </h4>
+                        <span className={`text-sm px-3 py-1 rounded-full ${
+                          experience.isCurrent 
+                            ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
+                            : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'
+                        }`}>
+                          {experience.isCurrent ? t('about.timeline.current') : t(`about.timeline.${experience.id}.period`)}
+                        </span>
+                      </div>
+                      <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-2">
+                        {t(`about.timeline.${experience.id}.company`)}
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        {t(`about.timeline.${experience.id}.description`)}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
