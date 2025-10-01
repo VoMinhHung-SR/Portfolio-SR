@@ -17,6 +17,8 @@ import PostgreSQLIcon from "./icon/techs/PostgreSQLIcon";
 import FirebaseIcon from "./icon/techs/FirebaseIcon";
 import DockerIcon from "./icon/techs/DockerIcon";
 import PostmanIcon from "./icon/techs/PostmanIcon";
+import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 interface Skill {
   Icon: React.ElementType;
@@ -46,9 +48,11 @@ interface SkillsListProps {
   setPrefix: string;
 }
 
-const SkillsList = ({ title, skills, titleClassName = "text-3xl", setPrefix }: SkillsListProps) => (
-  <div className="flex flex-col items-center justify-center gap-8 py-16">
-    <h2 className={`${titleClassName} font-bold text-white mb-4`}>{title}</h2>
+const SkillsList = ({ title, skills, titleClassName = "text-2xl", setPrefix }: SkillsListProps) => (
+  <div className="flex flex-col gap-8 py-10">
+    <div className="w-full max-w-4xl mx-auto">
+      <h3 className={`${titleClassName} font-bold text-white mb-4 text-center`}>{title}</h3>
+    </div>
     <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
       <div className="flex gap-8 animate-seamless w-max">
         {Array.from({ length: 2 }, (_, setIndex) => 
@@ -67,6 +71,7 @@ const SkillsList = ({ title, skills, titleClassName = "text-3xl", setPrefix }: S
 );
 
 const SkillsSection = () => {
+  const { t } = useTranslation('common');
   // Core skills
   const coreSkills: Skill[] = [
     { Icon: HTMLIcon, name: "HTML" },
@@ -94,19 +99,33 @@ const SkillsSection = () => {
   ];
 
   return (
-    <>
-      <SkillsList 
-        title="Skills" 
-        skills={coreSkills} 
-        setPrefix="core"
-      />
-      <SkillsList 
-        title="Additional Skills" 
-        skills={additionalSkills} 
-        titleClassName="text-2xl"
-        setPrefix="additional"
-      />
-    </>
+    <section id="skills" className="py-20 relative">
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-10 text-center">{t('skills.title')}</h2>
+      <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          <SkillsList 
+            title={t('skills.frontendStack')} 
+            skills={coreSkills} 
+            setPrefix="core" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.4 }}
+      >
+        <SkillsList 
+          title={t('skills.backendAndTools')} 
+          skills={additionalSkills} 
+          titleClassName="text-2xl"
+          setPrefix="additional"
+        />
+      </motion.div>
+    </section>
   );
 };
 
