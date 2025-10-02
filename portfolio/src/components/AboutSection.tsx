@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+import { formatBoldText } from '../lib/helpers';
 
 const AboutSection = () => {
   const { t } = useTranslation('common');
+
   const experiences = [
     {
       id: 'job1',
@@ -67,15 +69,9 @@ const AboutSection = () => {
               {t('about.myJourney')}
             </h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
-              <p>
-                {t('about.journey1')}
-              </p>
-              <p>
-                {t('about.journey2')}
-              </p>
-              <p>
-                {t('about.journey3')}
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: formatBoldText(t('about.journey1')) }} />
+              <p dangerouslySetInnerHTML={{ __html: formatBoldText(t('about.journey2')) }} />
+              <p dangerouslySetInnerHTML={{ __html: formatBoldText(t('about.journey3')) }} />
             </div>
           </motion.div>
 

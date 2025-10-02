@@ -39,9 +39,9 @@
         "description": "Working freelance on small projects, building portfolio and gaining real-world experience."
       }
     },
-    "journey1": "Started my journey in web development 1 years ago, I've been passionate about creating user-friendly and visually appealing web applications. My expertise lies in modern JavaScript frameworks, particularly React and Next.js.",
-    "journey2": "I love turning complex problems into simple, beautiful and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.",
-    "journey3": "My goal is to build products that provide pixel-perfect, performant experiences while maintaining clean and scalable code.",
+    "journey1": "I graduated in Information Technology from Ho Chi Minh City Open University in 2023, where I built a strong foundation in programming and software development.",
+    "journey2": "Currently, I focus on Front-End development with <bold>React</bold> and <bold>Next.js</bold>, while expanding into Backend using <bold>Django REST Framework</bold>. Over the past year, I have worked on personal and freelance projects, sharpening my skills in building real-world applications and delivering smooth user experiences.",
+    "journey3": "Looking ahead, I aim to grow into a Fullstack Developer, continuously improving my expertise and contributing to impactful, scalable web solutions.",
     "stats": {
       "experience": "Years Experience",
       "projects": "Projects Completed", 
