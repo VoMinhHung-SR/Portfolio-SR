@@ -21,22 +21,22 @@
     "timeline": {
       "current": "Hiện tại",
       "job1": {
-        "title": "Frontend Developer",
-        "company": "Công ty ABC",
-        "period": "2023 - Hiện tại",
-        "description": "Phát triển các ứng dụng web sử dụng React, Next.js và TypeScript. Làm việc với team để tạo ra các sản phẩm chất lượng cao."
+        "title": "Freelance Frontend Developer",
+        "company": "Freelance",
+        "period": "2025 - Hiện tại",
+        "description": "Phát triển ứng dụng web cho các dự án nhỏ và khách hàng cá nhân. Xây dựng portfolio và tích lũy kinh nghiệm thực tế."
       },
       "job2": {
-        "title": "Junior Frontend Developer", 
-        "company": "Startup XYZ",
-        "period": "2022 - 2023",
-        "description": "Bắt đầu hành trình phát triển web, học hỏi các công nghệ mới và tham gia vào các dự án thực tế."
+        "title": "Frontend Developer", 
+        "company": "HVACR Spare Parts",
+        "period": "2023 - 2024",
+        "description": "Xây dựng và tối ưu website thương mại cho doanh nghiệp. Đảm bảo UI/UX mượt mà và khả năng truy cập tốt trên đa thiết bị."
       },
       "job3": {
-        "title": "Freelance Developer",
-        "company": "Tự do",
-        "period": "2021 - 2022", 
-        "description": "Làm việc tự do với các dự án nhỏ, xây dựng portfolio và tích lũy kinh nghiệm thực tế."
+        "title": "Frontend Developer Intern",
+        "company": "GEEK Up Technology JSC.",
+        "period": "2022 - 2023", 
+        "description": "Tham gia phát triển module giao diện trong các dự án thực tế. Học hỏi quy trình làm việc theo nhóm Agile và code review."
       }
     },
     "journey1": "Mình tốt nghiệp ngành Công nghệ Thông tin tại Đại học Mở TP.HCM năm 2023, nơi mình tích lũy nền tảng về lập trình và phát triển phần mềm.",

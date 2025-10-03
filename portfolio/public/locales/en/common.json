@@ -21,22 +21,22 @@
     "timeline": {
       "current": "Current",
       "job1": {
-        "title": "Frontend Developer",
-        "company": "ABC Company",
-        "period": "2023 - Present",
-        "description": "Developing web applications using React, Next.js and TypeScript. Working with team to create high-quality products."
+        "title": "Freelance Frontend Developer",
+        "company": "Freelance",
+        "period": "2025 - Present",
+        "description": "Developing web applications for small projects and personal clients. Building portfolio and gaining real-world experience."
       },
       "job2": {
-        "title": "Junior Frontend Developer",
-        "company": "XYZ Startup", 
-        "period": "2022 - 2023",
-        "description": "Started web development journey, learning new technologies and participating in real projects."
+        "title": "Frontend Developer",
+        "company": "HVACR Spare Parts",
+        "period": "2023 - 2024",
+        "description": "Building and optimizing a commercial website for a company. Ensuring smooth UI/UX and good accessibility across devices."
       },
       "job3": {
-        "title": "Freelance Developer",
-        "company": "Freelance",
-        "period": "2021 - 2022",
-        "description": "Working freelance on small projects, building portfolio and gaining real-world experience."
+        "title": "Frontend Developer Intern",
+        "company": "GEEK Up Technology JSC.", 
+        "period": "2022 - 2023",
+        "description": "Participating in the development of interface modules in real projects. Learning the workflow of Agile teams and code review."
       }
     },
     "journey1": "I graduated in Information Technology from Ho Chi Minh City Open University in 2023, where I built a strong foundation in programming and software development.",
