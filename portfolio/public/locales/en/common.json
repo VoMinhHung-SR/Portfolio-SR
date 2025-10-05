@@ -63,12 +63,12 @@
     "liveDemo": "Live Demo",
     "viewCode": "View Code",
     "project1": {
-      "title": "E-commerce Platform",
+      "title": "Private Clinic Management",
       "description": "A full-stack e-commerce solution built with Next.js and Stripe integration. Features include user authentication, product catalog, shopping cart, and secure payment processing.",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Prisma"],
+      "tech": ["React-Vite", "TailwindCSS", "Javascript", "Django REST Framework", "PostgreSQL"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://clinic-oupharmacy.vercel.app/",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Clinic-Oupharmacy-FE"
     },
     "project2": {
       "title": "Task Management App",
@@ -92,24 +92,24 @@
       "tech": ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
       "image": "/placeholder-project.jpg",
       "demoUrl": "#",
-      "codeUrl": "#"
+      "codeUrl": "https://github.com/VoMinhHung-SR/Portfolio-SR"
     },
     "project5": {
-      "title": "Chat Application",
-      "description": "Real-time chat application with private messaging, group chats, and file sharing capabilities.",
-      "tech": ["React", "Firebase", "Material-UI", "WebRTC"],
+      "title": "Minigame Sudoku",
+      "description": "Minigame Sudoku is a sudoku game built with HTML5, CSS3, and Javascript.",
+      "tech": ["HTML5", "CSS3", "Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku"
     },
     "project6": {
-      "title": "Expense Tracker",
-      "description": "Personal finance management app with budget tracking, expense categorization, and financial insights.",
-      "tech": ["React Native", "Redux", "Chart.js", "SQLite"],
+      "title": "AnimeVietsub AdBlock Extension",
+      "description": "AnimeVietsub AdBlock Extension is a browser extension that blocks ads in AnimeVietsub.",
+      "tech": ["Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
-    }
+      "demoUrl": "https://github.com/VoMinhHung-SR/Hide_ads_extension",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Hide_ads_extension"
+      }
   },
   "contact": {
     "title": "Let's Work Together",

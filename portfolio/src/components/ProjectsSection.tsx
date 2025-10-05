@@ -10,8 +10,8 @@ const ProjectsSection = () => {
       description: t('projects.project1.description'),
       tech: t('projects.project1.tech', { returnObjects: true }),
       image: t('projects.project1.image'),
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: t('projects.project1.demoUrl'),
+      codeUrl: t('projects.project1.codeUrl'),
       featured: true
     },
     {
@@ -20,8 +20,8 @@ const ProjectsSection = () => {
       description: t('projects.project2.description'),
       tech: t('projects.project2.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: t('projects.project2.demoUrl'),
+      codeUrl: t('projects.project2.codeUrl'),
       featured: true
     },
     {
@@ -30,8 +30,8 @@ const ProjectsSection = () => {
       description: t('projects.project3.description'),
       tech: t('projects.project3.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: t('projects.project3.demoUrl'),
+      codeUrl: t('projects.project3.codeUrl'),
       featured: false
     },
     {
@@ -40,8 +40,8 @@ const ProjectsSection = () => {
       description: t('projects.project4.description'),
       tech: t('projects.project4.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: t('projects.project4.demoUrl'),
+      codeUrl: t('projects.project4.codeUrl'),
       featured: false
     },
     {
@@ -50,8 +50,8 @@ const ProjectsSection = () => {
       description: t('projects.project5.description'),
       tech: t('projects.project5.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: t('projects.project5.demoUrl'),
+      codeUrl: t('projects.project5.codeUrl'),
       featured: false
     },
     {
@@ -60,8 +60,8 @@ const ProjectsSection = () => {
       description: t('projects.project6.description'),
       tech: t('projects.project6.tech', { returnObjects: true }),
       image: "/placeholder-project.jpg",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: t('projects.project6.demoUrl'),
+      codeUrl: t('projects.project6.codeUrl'),
       featured: false
     }
   ];

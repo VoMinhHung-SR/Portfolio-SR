@@ -63,12 +63,12 @@
     "liveDemo": "Demo trực tiếp",
     "viewCode": "Xem mã nguồn",
     "project1": {
-      "title": "E-commerce Website",
+      "title": "Quản lý phòng mạch tư",
       "description": "Website bán hàng trực tuyến với hệ thống quản lý đơn hàng, thanh toán và quản lý sản phẩm.",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Prisma"],
+      "tech": ["React-Vite", "TailwindCSS", "Javascript", "Material-UI", "Django REST Framework", "PostgreSQL"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://clinic-oupharmacy.vercel.app/",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Clinic-Oupharmacy-FE"
     },
     "project2": {
       "title": "Ứng dụng Quản lý Công việc",
@@ -87,28 +87,28 @@
       "codeUrl": "#"
     },
     "project4": {
-      "title": "Website Portfolio",
-      "description": "Website portfolio với các hiệu ứng mượt mà, hỗ trợ chế độ tối, và thiết kế phản hồi.",
+      "title": "Portfolio Website",
+      "description": "Website được xây dựng với Next.js, Framer Motion, Tailwind CSS, và TypeScript.",
       "tech": ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
       "image": "/placeholder-project.jpg",
       "demoUrl": "#",
-      "codeUrl": "#"
+      "codeUrl": "https://github.com/VoMinhHung-SR/Portfolio-SR"
     },
     "project5": {
-      "title": "Ứng dụng Chat",
-      "description": "Ứng dụng chat thời gian thực với tin nhắn riêng tư, chat nhóm và khả năng chia sẻ tệp.",
-      "tech": ["React", "Firebase", "Material-UI", "WebRTC"],
+      "title": "Trò chơi Sudoku",
+      "description": "Trò chơi Sudoku được xây dựng với HTML5, CSS3, và Javascript.",
+      "tech": ["HTML5", "CSS3", "Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku"
     },
     "project6": {
-      "title": "Ứng dụng Quản lý Chi tiêu",
-      "description": "Ứng dụng quản lý tài chính với theo dõi ngân sách, phân loại chi tiêu và thông tin tài chính.",
-      "tech": ["React Native", "Redux", "Chart.js", "SQLite"],
+      "title": "AnimeVietsub AdBlock Extension",
+      "description": "AnimeVietsub AdBlock Extension là một tiện ích trình duyệt để chặn quảng cáo trong AnimeVietsub.",
+      "tech": ["Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Hide_ads_extension"
     }
   },
   "contact": {
