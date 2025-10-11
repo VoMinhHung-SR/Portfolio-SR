@@ -21,27 +21,27 @@
     "timeline": {
       "current": "Current",
       "job1": {
-        "title": "Frontend Developer",
-        "company": "ABC Company",
-        "period": "2023 - Present",
-        "description": "Developing web applications using React, Next.js and TypeScript. Working with team to create high-quality products."
+        "title": "Freelance Frontend Developer",
+        "company": "Freelance",
+        "period": "2025 - Present",
+        "description": "Developing web applications for small projects and personal clients. Building portfolio and gaining real-world experience."
       },
       "job2": {
-        "title": "Junior Frontend Developer",
-        "company": "XYZ Startup", 
-        "period": "2022 - 2023",
-        "description": "Started web development journey, learning new technologies and participating in real projects."
+        "title": "Frontend Developer",
+        "company": "HVACR Spare Parts",
+        "period": "2023 - 2024",
+        "description": "Building and optimizing a commercial website for a company. Ensuring smooth UI/UX and good accessibility across devices."
       },
       "job3": {
-        "title": "Freelance Developer",
-        "company": "Freelance",
-        "period": "2021 - 2022",
-        "description": "Working freelance on small projects, building portfolio and gaining real-world experience."
+        "title": "Frontend Developer Intern",
+        "company": "GEEK Up Technology JSC.", 
+        "period": "2022 - 2023",
+        "description": "Participating in the development of interface modules in real projects. Learning the workflow of Agile teams and code review."
       }
     },
-    "journey1": "Started my journey in web development 1 years ago, I've been passionate about creating user-friendly and visually appealing web applications. My expertise lies in modern JavaScript frameworks, particularly React and Next.js.",
-    "journey2": "I love turning complex problems into simple, beautiful and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.",
-    "journey3": "My goal is to build products that provide pixel-perfect, performant experiences while maintaining clean and scalable code.",
+    "journey1": "I graduated in Information Technology from Ho Chi Minh City Open University in 2023, where I built a strong foundation in programming and software development.",
+    "journey2": "Currently, I focus on Front-End development with <bold>React</bold> and <bold>Next.js</bold>, while expanding into Backend using <bold>Django REST Framework</bold>. Over the past year, I have worked on personal and freelance projects, sharpening my skills in building real-world applications and delivering smooth user experiences.",
+    "journey3": "Looking ahead, I aim to grow into a Fullstack Developer, continuously improving my expertise and contributing to impactful, scalable web solutions.",
     "stats": {
       "experience": "Years Experience",
       "projects": "Projects Completed", 
@@ -63,12 +63,12 @@
     "liveDemo": "Live Demo",
     "viewCode": "View Code",
     "project1": {
-      "title": "E-commerce Platform",
+      "title": "Private Clinic Management",
       "description": "A full-stack e-commerce solution built with Next.js and Stripe integration. Features include user authentication, product catalog, shopping cart, and secure payment processing.",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Prisma"],
+      "tech": ["React-Vite", "TailwindCSS", "Javascript", "Django REST Framework", "PostgreSQL"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://clinic-oupharmacy.vercel.app/",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Clinic-Oupharmacy-FE"
     },
     "project2": {
       "title": "Task Management App",
@@ -79,12 +79,12 @@
       "codeUrl": "#"
     },
     "project3": {
-      "title": "Weather Dashboard",
-      "description": "A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-      "tech": ["Vue.js", "API Integration", "Chart.js", "CSS3", "PWA"],
+      "title": "Minigame Sudoku",
+      "description": "Minigame Sudoku is a sudoku game built with HTML5, CSS3, and Javascript.",
+      "tech": ["HTML5", "CSS3", "Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku"
     },
     "project4": {
       "title": "Portfolio Website",
@@ -92,24 +92,24 @@
       "tech": ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
       "image": "/placeholder-project.jpg",
       "demoUrl": "#",
-      "codeUrl": "#"
+      "codeUrl": "https://github.com/VoMinhHung-SR/Portfolio-SR"
     },
     "project5": {
-      "title": "Chat Application",
-      "description": "Real-time chat application with private messaging, group chats, and file sharing capabilities.",
-      "tech": ["React", "Firebase", "Material-UI", "WebRTC"],
+      "title": "Hide RoAds Extension",
+      "description": "A browser extension that blocks ads on Rophim domains.",
+      "tech": ["Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://github.com/VoMinhHung-SR/HideRoAds",
+      "codeUrl": "https://github.com/VoMinhHung-SR/HideRoAds"
     },
     "project6": {
-      "title": "Expense Tracker",
-      "description": "Personal finance management app with budget tracking, expense categorization, and financial insights.",
-      "tech": ["React Native", "Redux", "Chart.js", "SQLite"],
+      "title": "AnimeVietsub AdBlock Extension",
+      "description": "AnimeVietsub AdBlock Extension is a browser extension that blocks ads in AnimeVietsub.",
+      "tech": ["Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
-    }
+      "demoUrl": "https://github.com/VoMinhHung-SR/Hide_ads_extension",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Hide_ads_extension"
+      }
   },
   "contact": {
     "title": "Let's Work Together",

@@ -84,17 +84,23 @@ const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Add offset to account for fixed header
-      const headerOffset = 80;
+      // Add offset to account for fixed header - increased for mobile
+      const headerOffset = window.innerWidth < 768 ? 100 : 80;
       const elementPosition = element.offsetTop;
       const offsetPosition = elementPosition - headerOffset;
       
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+      // Use requestAnimationFrame for better mobile performance
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
       });
     }
-    setIsMobileMenuOpen(false);
+    // Close mobile menu after a short delay to ensure scroll starts
+    setTimeout(() => {
+      setIsMobileMenuOpen(false);
+    }, 100);
   };
 
   // Check if we're on the home page (landing page) 
@@ -269,7 +275,10 @@ const Navigation = () => {
                 return (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.id);
+                    }}
                     className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
                       isActive
                         ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'

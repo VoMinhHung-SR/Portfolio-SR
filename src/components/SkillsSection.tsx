@@ -34,10 +34,10 @@ interface SkillItemProps {
 const SkillItem = ({ skill, index, setPrefix }: SkillItemProps) => (
   <div 
     key={`${setPrefix}-${index}`}
-    className="flex-shrink-0 flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
+    className="flex-shrink-0 flex flex-col items-center gap-1 sm:gap-2 p-2 sm:p-3 lg:p-4 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
   >
-    <skill.Icon width={80} height={80} />
-    <span className="text-white text-sm font-medium">{skill.name}</span>
+    <skill.Icon className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20" />
+    <span className="text-white text-xs sm:text-sm font-medium">{skill.name}</span>
   </div>
 );
 
@@ -48,13 +48,13 @@ interface SkillsListProps {
   setPrefix: string;
 }
 
-const SkillsList = ({ title, skills, titleClassName = "text-2xl", setPrefix }: SkillsListProps) => (
-  <div className="flex flex-col gap-8 py-10">
+const SkillsList = ({ title, skills, titleClassName = "text-xl sm:text-2xl", setPrefix }: SkillsListProps) => (
+  <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 py-6 sm:py-8 lg:py-10">
     <div className="w-full max-w-4xl mx-auto">
-      <h3 className={`${titleClassName} font-bold text-white mb-4 text-center`}>{title}</h3>
+      <h3 className={`${titleClassName} font-bold text-white mb-3 sm:mb-4 text-center`}>{title}</h3>
     </div>
     <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
-      <div className="flex gap-8 animate-seamless w-max">
+      <div className="flex gap-4 sm:gap-6 lg:gap-8 animate-seamless w-max">
         {Array.from({ length: 2 }, (_, setIndex) => 
           skills.map((skill, index) => (
             <SkillItem 
@@ -99,8 +99,8 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 relative">
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-10 text-center">{t('skills.title')}</h2>
+    <section id="skills" className="py-12 sm:py-16 lg:py-20 relative">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 lg:mb-10 text-center">{t('skills.title')}</h2>
       <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ const SkillsSection = () => {
         <SkillsList 
           title={t('skills.backendAndTools')} 
           skills={additionalSkills} 
-          titleClassName="text-2xl"
+          titleClassName="text-xl sm:text-2xl"
           setPrefix="additional"
         />
       </motion.div>
