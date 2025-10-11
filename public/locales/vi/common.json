@@ -79,12 +79,12 @@
       "codeUrl": "#"
     },
     "project3": {
-      "title": "Bảng điều khiển Thời tiết",
-      "description": "Bảng điều khiển thời tiết với dự báo thời tiết dựa trên vị trí, bản đồ tương tác và phân tích thời tiết chi tiết.",
-      "tech": ["Vue.js", "API Integration", "Chart.js", "CSS3", "PWA"],
+      "title": "Trò chơi Sudoku",
+      "description": "Trò chơi Sudoku được xây dựng với HTML5, CSS3, và Javascript.",
+      "tech": ["HTML5", "CSS3", "Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku"
     },
     "project4": {
       "title": "Portfolio Website",
@@ -95,12 +95,12 @@
       "codeUrl": "https://github.com/VoMinhHung-SR/Portfolio-SR"
     },
     "project5": {
-      "title": "Trò chơi Sudoku",
-      "description": "Trò chơi Sudoku được xây dựng với HTML5, CSS3, và Javascript.",
-      "tech": ["HTML5", "CSS3", "Javascript"],
+      "title": "Hide RoAds Extension",
+      "description": "Tiện ích trình duyệt, ẩn quảng cáo trên các tên miền của Rophim",
+      "tech": ["Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
-      "codeUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku"
+      "demoUrl": "https://github.com/VoMinhHung-SR/HideRoAds",
+      "codeUrl": "https://github.com/VoMinhHung-SR/HideRoAds"
     },
     "project6": {
       "title": "AnimeVietsub AdBlock Extension",

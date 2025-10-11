@@ -79,12 +79,12 @@
       "codeUrl": "#"
     },
     "project3": {
-      "title": "Weather Dashboard",
-      "description": "A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-      "tech": ["Vue.js", "API Integration", "Chart.js", "CSS3", "PWA"],
+      "title": "Minigame Sudoku",
+      "description": "Minigame Sudoku is a sudoku game built with HTML5, CSS3, and Javascript.",
+      "tech": ["HTML5", "CSS3", "Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "#",
-      "codeUrl": "#"
+      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
+      "codeUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku"
     },
     "project4": {
       "title": "Portfolio Website",
@@ -95,12 +95,12 @@
       "codeUrl": "https://github.com/VoMinhHung-SR/Portfolio-SR"
     },
     "project5": {
-      "title": "Minigame Sudoku",
-      "description": "Minigame Sudoku is a sudoku game built with HTML5, CSS3, and Javascript.",
-      "tech": ["HTML5", "CSS3", "Javascript"],
+      "title": "Hide RoAds Extension",
+      "description": "A browser extension that blocks ads on Rophim domains.",
+      "tech": ["Javascript"],
       "image": "/placeholder-project.jpg",
-      "demoUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku",
-      "codeUrl": "https://github.com/VoMinhHung-SR/Minigame-Sudoku"
+      "demoUrl": "https://github.com/VoMinhHung-SR/HideRoAds",
+      "codeUrl": "https://github.com/VoMinhHung-SR/HideRoAds"
     },
     "project6": {
       "title": "AnimeVietsub AdBlock Extension",
